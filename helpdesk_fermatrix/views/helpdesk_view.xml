@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_helpdesk_ticket_tree" model="ir.ui.view">
+        <field name="name">view.helpdesk_ticket.tree</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <tree string="Ticket">
+                <field name="name" />
+                <field name="description" />
+                <field name="state" />
+                <field name="date" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_helpdesk_ticket_form" model="ir.ui.view">
+        <field name="name">view.helpdesk_ticket.form</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <form string="Ticket">
+                <header>
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="main">
+                            <field name="date" />
+                            <field name="date_limit" />
+                        </group>
+                        <group name="main">
+                            <field name="assigned" />
+                            <field name="time" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description" />
+                        </page>
+                        <page string="Action Corrective">
+                            <field name="action_corrective" />
+                        </page>
+                        <page string="Action Preventive">
+                            <field name="action_preventive" />
+                        </page>
+                    </notebook>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_helpdesk_ticket_search" model="ir.ui.view">
+        <field name="name">view.helpdesk_ticket.search</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <search string="Ticket">
+                <field name="name" />
+                <group string="Group By" name="groupby">
+                    <filter name="nam_groupby" string="nam"
+                        context="{'group_by': 'name'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="helpdesk_ticket_action" model="ir.actions.act_window">
+        <field name="name">Ticket</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new Ticket.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="helpdesk_ticket_menu" parent=""
+        action="helpdesk_ticket_action" sequence="20"/>
+</odoo>
