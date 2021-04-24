@@ -7,6 +7,7 @@
             <tree string="Ticket">
                 <field name="name" />
                 <field name="description" />
+                <field name="user_id" widget="many2one_avatar_user" optional="show"/>
                 <field name="state" />
                 <field name="date" />
             </tree>
@@ -39,19 +40,34 @@
                             <field name="date_limit" />
                         </group>
                         <group name="main">
+                            <field name="user_id" widget="many2one_avatar_user"/>
                             <field name="assigned" />
+                            <field name="ticket_qty" />
+                            
                             <field name="time" />
                         </group>
                     </group>
                     <notebook>
                         <page string="Description">
                             <field name="description" />
+                            <group>
+                                <field name="tag_name"/>
+                                <button string="Create tag"
+                                name="create_tag"
+                                type="object"/>
+                            </group>
+                            <group name="Tags">
+                                <field name="tag_ids" string='Tags'/>
+                            </group>
                         </page>
                         <page string="Action Corrective">
                             <field name="action_corrective" />
                         </page>
                         <page string="Action Preventive">
                             <field name="action_preventive" />
+                        </page>
+                        <page string="Actions">
+                            <field name="action_ids" />
                         </page>
                     </notebook>
                     
