@@ -19,12 +19,12 @@
         <field name="arch" type="xml">
             <form string="Ticket">
                 <header>
-                    <button string="Asignado" name="marcar_asignado" type="object" attrs="{'invisible':[('state','!=','new')]}" />
-                    <button string="En proceso" name="marcar_enproceso" type="object" states="asignado" />
-                    <button string="Pendiente" name="marcar_pendiente" type="object" states="proceso" />
-                    <button string="Resuelto" name="marcar_resuelto" type="object" states="pendiente" />
-                    <button string="Cancelar" name="marcar_cancelado" type="object" attrs="{'invisible':[('state','==','cancelado')]}" />
-                    <button string="Marcar como nuevo" name="set_reset" type="object" attrs="{'invisible':[('state','==','new')]}" />
+                    <button string="Assigned" name="mark_assigned" type="object" attrs="{'invisible':[('state','!=','new')]}" />
+                    <button string="In process" name="mark_inprocess" type="object" states="assigned" />
+                    <button string="Pending" name="mark_pending" type="object" states="inprocess" />
+                    <button string="Solved" name="mark_solved" type="object" states="pending" />
+                    <button string="Cancel" name="mark_canceled" type="object" attrs="{'invisible':[('state','==','canceled')]}" />
+                    <button string="Mark as new" name="set_reset" type="object" attrs="{'invisible':[('state','==','new')]}" />
                     <field name="state" widget="statusbar" />
                 </header>
                 <sheet>

@@ -1,0 +1,216 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* helpdesk_fermatrix
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-24 08:09+0000\n"
+"PO-Revision-Date: 2021-04-24 08:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: helpdesk_fermatrix
+#: model:res.groups,comment:helpdesk_fermatrix.helpdesk_user
+msgid ""
+"\n"
+"            The user will be able to browse some model.\n"
+"        "
+msgstr ""
+
+#. module: helpdesk_fermatrix
+#: model:res.groups,comment:helpdesk_fermatrix.helpdesk_manager
+msgid ""
+"\n"
+"            The user will be able to manage some model.\n"
+"        "
+msgstr ""
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__action_corrective
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_form
+msgid "Action Corrective"
+msgstr "Acción correctiva"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__action_preventive
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_form
+msgid "Action Preventive"
+msgstr "Acción preventiva"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__assigned
+#: model:ir.model.fields.selection,name:helpdesk_fermatrix.selection__helpdesk_ticket__state__assigned
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_form
+msgid "Assigned"
+msgstr "Asignado"
+
+#. module: helpdesk_fermatrix
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields.selection,name:helpdesk_fermatrix.selection__helpdesk_ticket__state__canceled
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: helpdesk_fermatrix
+#: model_terms:ir.actions.act_window,help:helpdesk_fermatrix.helpdesk_ticket_action
+msgid "Create a new ticket"
+msgstr "Crear un nuevo ticket"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__date_limit
+msgid "Date Limit"
+msgstr "Fecha límite"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,help:helpdesk_fermatrix.field_helpdesk_ticket__action_corrective
+msgid "Describe corrective actions"
+msgstr "Describir acción correctiva"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,help:helpdesk_fermatrix.field_helpdesk_ticket__action_preventive
+msgid "Describe preventive actions"
+msgstr "Describir acción preventiva"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__description
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: helpdesk_fermatrix
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: helpdesk_fermatrix
+#: model:ir.module.category,name:helpdesk_fermatrix.ir_module_category_helpdesk
+#: model:ir.ui.menu,name:helpdesk_fermatrix.helpdesk_menu_root
+#: model:ir.ui.menu,name:helpdesk_fermatrix.helpdesk_menu_submenu
+msgid "Helpdesk"
+msgstr "Helpdesk"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__id
+msgid "ID"
+msgstr "ID"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields.selection,name:helpdesk_fermatrix.selection__helpdesk_ticket__state__inprocess
+msgid "In Process"
+msgstr "En proceso"
+
+#. module: helpdesk_fermatrix
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_form
+msgid "In process"
+msgstr "En proceso"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket____last_update
+msgid "Last Modified on"
+msgstr "Última modificación"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__write_uid
+msgid "Last Updated by"
+msgstr "Última modificación por"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__write_date
+msgid "Last Updated on"
+msgstr "Última modificación en"
+
+#. module: helpdesk_fermatrix
+#: model:res.groups,name:helpdesk_fermatrix.helpdesk_manager
+msgid "Manager"
+msgstr "Manager"
+
+#. module: helpdesk_fermatrix
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_form
+msgid "Mark as new"
+msgstr "Marcar como nuevo"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields.selection,name:helpdesk_fermatrix.selection__helpdesk_ticket__state__new
+msgid "New"
+msgstr "Nuevo"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields.selection,name:helpdesk_fermatrix.selection__helpdesk_ticket__state__pending
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_form
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields.selection,name:helpdesk_fermatrix.selection__helpdesk_ticket__state__solved
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_form
+msgid "Solved"
+msgstr "Solucionado"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__state
+msgid "State"
+msgstr "Estado"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model,name:helpdesk_fermatrix.model_helpdesk_ticket
+#: model:ir.ui.menu,name:helpdesk_fermatrix.helpdesk_menu_action
+#: model:ir.ui.menu,name:helpdesk_fermatrix.helpdesk_ticket_menu
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_form
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_search
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_tree
+msgid "Ticket"
+msgstr "Ticket"
+
+#. module: helpdesk_fermatrix
+#: model:ir.actions.act_window,name:helpdesk_fermatrix.helpdesk_ticket_action
+msgid "Tickets"
+msgstr "Tickets"
+
+#. module: helpdesk_fermatrix
+#: model:ir.model.fields,field_description:helpdesk_fermatrix.field_helpdesk_ticket__time
+msgid "Time"
+msgstr "Tiempo"
+
+#. module: helpdesk_fermatrix
+#: model:res.groups,name:helpdesk_fermatrix.helpdesk_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: helpdesk_fermatrix
+#: model_terms:ir.ui.view,arch_db:helpdesk_fermatrix.view_helpdesk_ticket_search
+msgid "nam"
+msgstr ""

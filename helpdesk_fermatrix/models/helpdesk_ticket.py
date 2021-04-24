@@ -4,50 +4,38 @@ class HelpdeskTicket(models.Model):
     _name = 'helpdesk.ticket'
     _description = 'Ticket'
 
-    name = fields.Char(
-        string='Name',
-        required=True)
-    description = fields.Text(
-        string='Description')
-    date = fields.Date(
-        string='Date')
+    name = fields.Char(required=True)
+    description = fields.Text(translate = True)
+    date = fields.Date()
     state = fields.Selection(
         [('new', 'New'),
-        ('asignado', 'Asignado'),
-        ('proceso', 'En proceso'),
-        ('pendiente', 'Pendiente'),
-        ('resuelto', 'Resuelto'),
-        ('cancelado', 'Cancelado')],
+        ('assigned', 'Assigned'),
+        ('inprocess', 'In Process'),
+        ('pending', 'Pending'),
+        ('solved', 'Solved'),
+        ('canceled', 'Canceled')],
         string='State',
         default='new')
-    time = fields.Float(
-        string='Time') 
-    assigned = fields.Boolean(
-        string='Assigned',
-        readonly=True)
-    date_limit = fields.Date(
-        string='Date Limit')
-    action_corrective = fields.Html(
-        string='Corrective Action',
-        help='Describe corrective actions')
-    action_preventive = fields.Html(
-        string='Preventive Action',
-        help='Describe preventive actions')
+    time = fields.Float() 
+    assigned = fields.Boolean(readonly=True)
+    date_limit = fields.Date()
+    action_corrective = fields.Html(help='Describe corrective actions')
+    action_preventive = fields.Html(help='Describe preventive actions')
 
-    def marcar_asignado(self):
-        self.set_state('asignado')
+    def mark_assigned(self):
+        self.set_state('assigned')
 
-    def marcar_enproceso(self):
-        self.set_state('proceso')
+    def mark_inprocess(self):
+        self.set_state('inprocess')
 
-    def marcar_pendiente(self):
-        self.set_state('pendiente')
+    def mark_pending(self):
+        self.set_state('pending')
 
-    def marcar_resuelto(self):
-        self.set_state('resuelto')
+    def mark_solved(self):
+        self.set_state('solved')
     
-    def marcar_cancelado(self):
-        self.set_state('cancelado')
+    def mark_canceled(self):
+        self.set_state('canceled')
 
     def set_state(self, new_state): 
         self.ensure_one()
