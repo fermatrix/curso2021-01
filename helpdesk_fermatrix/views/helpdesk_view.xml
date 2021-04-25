@@ -44,7 +44,7 @@
                             <field name="assigned" />
                             <field name="ticket_qty" />
                             
-                            <field name="time" />
+                            <field name="time"  widget="float_time"/>
                         </group>
                     </group>
                     <notebook>
@@ -82,11 +82,48 @@
         <field name="arch" type="xml">
             <search string="Ticket">
                 <field name="name" />
-                <group string="Group By" name="groupby">
-                    <filter name="nam_groupby" string="nam"
-                        context="{'group_by': 'name'}" />
-                </group>
+                <field name="user_id" />
+
+                <filter string="Assigned" name="assigned_filter" domain="[('user_id', '!=', False)]"/>
+                <filter string="No date limit" name="date_limit_filter" domain="[('date_limit', '!=', False)]"/>
+
+                <filter name="user_id_groupby" string="date_limit" context="{'group_by': 'date_limit'}" />
+                <filter name="user_id_groupby" string="user_id" context="{'group_by': 'user_id'}" />
             </search>
+        </field>
+    </record>
+
+    <record id="view_helpdesk_ticket_pivot" model="ir.ui.view">
+        <field name="name">view.helpdesk_ticket.pivot</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <pivot string="Ticket">
+                <field name="user_id" type="row"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="time" type="measure" widget="float_time" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_helpdesk_ticket_graph" model="ir.ui.view">
+        <field name="name">view.helpdesk_ticket.graph</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <graph string="Ticket_User">
+                <field name="user_id" />
+                <field name="time" type="measure" widget="float_time" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_helpdesk_ticket_calendar" model="ir.ui.view">
+        <field name="name">view.helpdesk_ticket.calendar</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <calendar string="Tickets" date_start="date" color="user_id" hide_time="true" event_limit="5">
+                <field name="user_id" avatar_field="image_128" />
+                <field name="name" />
+            </calendar>
         </field>
     </record>
 
