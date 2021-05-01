@@ -40,8 +40,8 @@
                             <field name="date_limit" />
                         </group>
                         <group name="main">
-                            <field name="user_id" widget="many2one_avatar_user"/>
-                            <field name="assigned" />
+                            <field name="user_id" options="{'no_create': True}" widget="many2one_avatar_user"/>
+                            <field name="assigned"  />
                             <field name="ticket_qty" />
                             
                             <field name="time"  widget="float_time"/>
@@ -56,9 +56,10 @@
                                 name="create_tag"
                                 type="object"/>
                             </group>
-                            <group name="Tags">
-                                <field name="tag_ids" string='Tags'/>
-                            </group>
+                            <field name="tag_ids" 
+                            options="{'no_create': True}" 
+                            context="{'form_view_ref':'helpdesk_fermatrix.view_helpdesk_ticket_tag_simple_form'}" 
+                            domain="[('public', '=', True)]" />
                         </page>
                         <page string="Action Corrective">
                             <field name="action_corrective" />
@@ -67,7 +68,18 @@
                             <field name="action_preventive" />
                         </page>
                         <page string="Actions">
-                            <field name="action_ids" />
+                            <field name="action_ids" context="{'default_date': date}">
+                                <tree editable="bottom" string="Acciones">
+                                    <field name="name" />
+                                    <field name="date"  />
+                                </tree>
+                                <form>
+                                    <group name="action">
+                                        <field name="name" />
+                                        <field name="date" />
+                                    </group>
+                                </form>
+                            </field>
                         </page>
                     </notebook>
                     
