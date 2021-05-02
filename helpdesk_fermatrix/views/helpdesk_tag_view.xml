@@ -57,6 +57,13 @@
             </field>
         </record>
 
+        <record id="action_new_tag" model="ir.actions.act_window">
+            <field name="name">New Tag</field>
+            <field name="res_model">helpdesk.ticket.tag</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
         <menuitem id="helpdesk_ticket_tag_menu" parent="helpdesk_menu_submenu"
             action="helpdesk_ticket_tag_action" sequence="40"/>
         

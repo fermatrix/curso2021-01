@@ -122,10 +122,20 @@ class HelpdeskTicket(models.Model):
 
     def create_tag(self):
         self.ensure_one()
-        self.write({
-            'tag_ids': [(0,0, {'name': self.tag_name})]
-            })
+        #    self.write({
+        #        'tag_ids': [(0,0, {'name': self.tag_name, 'public': True})]
+        #        })
+
+        action = self.env.ref('helpdesk_fermatrix.action_new_tag').read()[0]
+        
+        action['context'] = {
+            'default_name': self.tag_name,
+            'default_public': True,
+            'default_ticket_ids': [(6, 0, self.ids)] 
+        }
         self.tag_name = False
+        return action
+
 
     @api.constrains('time')
     def _time_positive(self):
