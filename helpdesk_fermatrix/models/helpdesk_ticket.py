@@ -1,4 +1,6 @@
-from odoo import models, api, fields
+from odoo import models, api, fields, _
+from odoo.exceptions import ValidationError
+from datetime import timedelta
 
 class HelpdeskTicketAction(models.Model):
     _name = 'helpdesk.ticket.action'
@@ -28,10 +30,12 @@ class HelpdeskTicket(models.Model):
     _name = 'helpdesk.ticket'
     _description = 'Ticket'
 
+    def _date_default_today(self):
+        return fields.Date.today()
 
     name = fields.Char(required=True)
     description = fields.Text(translate = True)
-    date = fields.Date()
+    date = fields.Date(default = _date_default_today)
     state = fields.Selection(
         [('new', 'New'),
         ('assigned', 'Assigned'),
@@ -116,3 +120,15 @@ class HelpdeskTicket(models.Model):
             'tag_ids': [(0,0, {'name': self.tag_name})]
             })
         self.tag_name = False
+
+    @api.constrains('time')
+    def _time_positive(self):
+        for ticket in self:
+            if ticket.time and ticket.time < 0:
+                raise ValidationError(_("Time must be a positive number"))
+
+    @api.onchange('date', 'date_limit')
+    def _onchange_date(self):
+        for ticket in self:
+            if ticket.date:
+                ticket.date_limit = ticket.date + timedelta(days=1)
